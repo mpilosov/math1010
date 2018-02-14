@@ -1,0 +1,192 @@
+\documentclass[12pt]{article}
+\usepackage{epsfig}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{epstopdf}
+
+\setlength{\textwidth}{6.5in}
+\setlength{\oddsidemargin}{0in}
+\setlength{\evensidemargin}{0in}
+\setlength{\textheight}{9.5in}
+\setlength{\voffset}{-1in}
+\setlength{\headsep}{0.25in}
+\setlength{\parindent}{0in}
+
+\input{../macros}
+\usepackage{etoolbox}
+
+\newtoggle{sol}
+%\toggletrue{sol}
+
+\togglefalse{sol}
+\newtheorem{theorem}{Theorem}
+\newtheorem{formula}[theorem]{Formula}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\title{\bf Math 1010 \\ Chapter 4D\iftoggle{sol}{ Key}{} }
+\date{\today}
+\maketitle
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+{\large \bf Loan Basics}
+\begin{itemize}
+	\item The {\bf principal} is the amount of money owed at a given time.
+	\item An {\bf installment loan} (or amortized loan) is a loan that is paid off with equal regular payments (this is the type of loan we will consider).
+	\item The {\bf loan term} is the time you have to pay back the loan in full.
+\end{itemize}
+
+{\large \bf Mortgages}
+\begin{itemize}
+	\item A {\bf fixed rate mortgage} is one in which the interest rate is guaranteed not to change over the life of the loan.
+	\item An {\bf adjustable rate mortgage} is one where the interest rate changes based on the prevailing rates.
+\end{itemize}
+
+\begin{formula}[Loan Payment Formula (regular payments)]
+\begin{equation}\label{eq:loan_formula}
+	PMT = \frac{P\times \Big(\frac{APR}{n} \Big)}{\Big[1 - \Big(1 + \frac{APR}{n}\Big)^{(-n\times Y)}\Big]}
+\end{equation}
+where
+\begin{itemize}
+	\item PMT is the regular payment amount
+	\item P is the starting loan principal (amount borrowed)
+	\item APR is the annual percentage rate
+	\item $n$ is the number of payment periods per year
+	\item Y is the loan term in years
+\end{itemize}
+
+\end{formula}
+
+\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\leftline{\bf \large Exercise 1 : Student Loan}
+Suppose you have student loans totaling $\$7,500$ when you graduate from college.  The interest rate is $APR=9\%$, and the loan term is 10 years (you must pay back the entire amount of the loan within 10 years).
+
+\begin{enumerate}
+\item What are your monthly payments?
+
+{\it Solution:
+
+We use Eq.~\eqref{eq:loan_formula} to determine the monthly payments,
+\begin{eqnarray*}
+	PMT &=& \frac{P\times \Big(\frac{APR}{n} \Big)}{\Big[1 - \Big(1 + \frac{APR}{n}\Big)^{(-n\times Y)}\Big]} \\
+	&=& \frac{7500\times \Big(\frac{0.09}{12} \Big)}{\Big[1 - \Big(1 + \frac{0.09}{12}\Big)^{(-12\times 10)}\Big]} \\
+	&=& \frac{56.25}{1 - 0.40794} \\
+	&=& \$95.01	
+\end{eqnarray*}
+
+}
+\item How much will you pay over the lifetime of the loan?
+
+{\it Solution:
+Your monthly payments are $\$95.01$ and you must pay this amount each month for 10 years,
+\begin{eqnarray*}
+	\frac{10\, years}{1}\frac{12\, months}{1 year}\frac{\$95.01}{1 month} = \$11,401.20
+\end{eqnarray*}
+
+}
+\item How much will you pay in interest over the total lifetime of the loan?
+
+{\it Solution:
+Subtract the original amount borrowed from the total amount of the original loan.
+\begin{eqnarray*}
+	\$11,401.20 - \$ 7,500 = \$ 3901.20
+\end{eqnarray*}
+
+}
+
+\item For the {\bf first three months}, calculate the amount of your payment that goes towards interest, the amount that goes towards your principal, and the new principal after the payment.
+
+{\it Solution:
+
+{\bf Month 1}
+The monthly interest rate is $\frac{APR}{12}=\frac{0.09}{12} = 0.0075$.  So the amount you pay in interest for the first month is the monthly interest rate times the CURRENT PRINCIPAL, which in this case is the full loan anount,
+\begin{eqnarray*}
+	7500 \times 0.0075 = 56.25
+\end{eqnarray*}
+So you pay $\$56.25$ in interest for the first month.  We already know from part (a) that your total monthly payments are $\$95.01$.  So the amount of that payment that goes toward the principal is,
+\begin{eqnarray*}
+	95.01 - 56.25 = \$38.76.
+\end{eqnarray*}
+The new principal is then the principal at the start of the month minus the amount of your payment that went towards the principal,
+\begin{eqnarray*}
+	P_1 = 7500 - 38.76 = 7461.24
+\end{eqnarray*}
+
+{\bf Month 2}
+For the second month, the PRINCIPAL HAS CHANGED.  So, the amount of your second payment that goes towards interest is is now the new principal, $P_1$, times the monthly interest rate,
+\begin{eqnarray*}
+	7461.24 \times 0.0075 = \$55.96,
+\end{eqnarray*}
+and the amount you pay towards the principal this month is the monthly payment amount minus the amount that you paid towards interest THIS MONTH,
+\begin{eqnarray*}
+	95.01 - 55.96 = \$39.05
+\end{eqnarray*}
+The new principal is then the principal at the start of the month, $P_1$, minus the amount of your payment that went towards the principal,
+\begin{eqnarray*}
+	P_2 = 7461.24 - 39.05 = 7422.19
+\end{eqnarray*}
+
+{\bf Month 3}
+For the third month, the PRICIPAL HAS CHANGED AGAIN.  The amount of your second payment that goes towards interest is,
+\begin{eqnarray*}
+	7422.19 \times 0.0075 = \$55.67,
+\end{eqnarray*}
+and the amount you pay towards the principal this month is the monthly payment amount minus the amount that you paid towards interest THIS MONTH,
+\begin{eqnarray*}
+	95.01 - 55.67 = \$39.34
+\end{eqnarray*}
+The new principal is then the principal at the start of the month, $P_2$, minus the amount of your payment that went towards the principal,
+\begin{eqnarray*}
+	P_2 = 7422.19 - 39.34 = 7382.85
+\end{eqnarray*}
+}
+\end{enumerate}
+
+\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\leftline{\bf \large Exercise 2 : Fixed Rate Mortgage}
+You need a loan of $\$100,000$ to buy a new house.  The bank offers a choice of a 15-year loan at an APR of $4.5\%$ or a 30-year loan at an APR of $5\%$.  Compare your monthly payments and total loan cost under the two different loan options.
+
+{\it Solution:
+
+{\bf 15-year loan at $\mathbf{4.5\%}$}
+
+We use Eq.~\eqref{eq:loan_formula} to determine the monthly payments,
+\begin{eqnarray*}
+	PMT &=& \frac{P\times \Big(\frac{APR}{n} \Big)}{\Big[1 - \Big(1 + \frac{APR}{n}\Big)^{(-n\times Y)}\Big]} \\
+	&=& \frac{100,000\times \Big(\frac{0.045}{12} \Big)}{\Big[1 - \Big(1 + \frac{0.045}{12}\Big)^{(-12\times 15)}\Big]} \\
+	&=& \$764.99
+\end{eqnarray*}
+Then, multiply the monthly payment by the loan term (in months) to determine the total of all the payments,
+\begin{eqnarray*}
+	764.99 \times 12 \times 15 = \$137,698.20
+\end{eqnarray*}
+
+\vskip 10pt
+
+{\bf 30-year loan at $\mathbf{5\%}$}
+
+We use Eq.~\eqref{eq:loan_formula} to determine the monthly payments,
+\begin{eqnarray*}
+	PMT &=& \frac{P\times \Big(\frac{APR}{n} \Big)}{\Big[1 - \Big(1 + \frac{APR}{n}\Big)^{(-n\times Y)}\Big]} \\
+	&=& \frac{100,000\times \Big(\frac{0.05}{12} \Big)}{\Big[1 - \Big(1 + \frac{0.05}{12}\Big)^{(-12\times 30)}\Big]} \\
+	&=& \$536.82
+\end{eqnarray*}
+Then, multiply the monthly payment by the loan term (in months) to determine the total of all the payments,
+\begin{eqnarray*}
+	536.82 \times 12 \times 30 = \$193,255.78
+\end{eqnarray*}
+
+}
+
+\end{document}

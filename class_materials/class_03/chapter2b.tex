@@ -1,0 +1,71 @@
+\documentclass[12pt]{article}
+\usepackage{epsfig}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{epstopdf}
+
+\setlength{\textwidth}{6.2in}
+\setlength{\oddsidemargin}{0.3in}
+\setlength{\evensidemargin}{0in}
+\setlength{\textheight}{8.7in}
+\setlength{\voffset}{-.7in}
+\setlength{\headsep}{26pt}
+\setlength{\parindent}{10pt}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\title{\bf Math 1010 \\ Chapter 2B}
+\date{Jan 24, 2018}
+\maketitle
+
+%\vskip .3in
+
+\input{../macros}
+%\input{./latex/macros.tex}  % input some useful macros
+%\input{exermacros.tex}       % more macros for exercise formatting
+
+
+% For exercises,
+% set enumerate to give parts a, b, c, ...  rather than numbers 1, 2, 3...
+%\renewcommand{\theenumi}{\alph{enumi}}
+%\renewcommand{\labelenumi}{(\theenumi)}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\leftline{\bf \large Notes}
+Our book outlines the following process for approaching problems we might find unfamiliar: \\
+\begin{enumerate}
+
+\item Step 1. Identify the units involved in the problem and the units that you expect for the answer.
+
+\item Step 2. Use the given units and the expected answer units to help you find a strategy for solving the problem.
+Perform all operations (such as multiplication or division) on both the numbers and their associated units.  \emph{Remember:}
+\begin{enumerate}
+\item You cannot add or subtract numbers with different units, but you can combine different units through multiplication, division, or raising to powers.
+\item It is easier to keep track of units if you \textbf{always replace division with multiplication by the reciprocal.} 
+For example, instead of dividing by  $\frac{60\text{ sec}}{\text{ min}}$, multiply by $\frac{1\text{ min}}{60\text{ sec}}$. 
+\emph{This might take some getting used to at first but hopefully you will never use the division symbol ever again, considering it is just a way to avoid writing a fraction, and is more subject to mis-interpretation than clearly showing what is in the numerator and what is in the denominator.}
+\end{enumerate}
+
+\item Step 3. When you complete your calculations, make sure that your answer has the units you expected.  If it does not, then you have done something incorrect.  Check to see of the answer makes sense (ask, \emph{does this seem reasonable}, use your intuition).
+\end{enumerate}
+\vspace{2in}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\leftline{\bf \large Example 1}
+\input{../../problem_bank/ch2_farmland.tex}
+
+\leftline{\bf \large Example 2}
+\input{../../problem_bank/ch2_pestobasil.tex}
+\pagebreak
+
+\leftline{\bf \large Example 3}
+\input{../../problem_bank/ch2_stopforgas.tex}
+
+
+\end{document}

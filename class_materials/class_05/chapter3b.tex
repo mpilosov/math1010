@@ -1,0 +1,187 @@
+\documentclass[12pt]{article}
+\usepackage{epsfig}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{epstopdf}
+
+\setlength{\textwidth}{6.5in}
+\setlength{\oddsidemargin}{0in}
+\setlength{\evensidemargin}{0in}
+\setlength{\textheight}{9.5in}
+\setlength{\voffset}{-1in}
+\setlength{\headsep}{0.25in}
+\setlength{\parindent}{0in}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\title{\bf Math 1010\\Chapter 3B}
+\date{\vspace{-0.5in}\today}
+\maketitle
+
+
+%\input{./latex/macros.tex}  % input some useful macros
+%\input{exermacros.tex}       % more macros for exercise formatting
+
+
+% For exercises,
+% set enumerate to give parts a, b, c, ...  rather than numbers 1, 2, 3...
+%\renewcommand{\theenumi}{\alph{enumi}}
+%\renewcommand{\labelenumi}{(\theenumi)}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\leftline{\bf \large Notes}
+In this section we will work with very large and very small numbers in ways that will help to give them meaning by putting them in perspective.\\
+
+\textbf{Scientific notation} is a format in which a number is expressed as a number between 1 and 10 multiplied by a power of 10.  For example,
+
+$6,700,000,000$ in scientific notation is $6.7 \times 10^9$
+
+$0.000000000000002$ is $2.0 \times 10^{-15}$
+
+This can be really helpful (who wants to write out all those zeros?)
+\vspace{0.25in}
+    		
+To convert a number \textit{from} ordinary notation \textit{to} scientific notation:
+\begin{enumerate}
+\item Move the decimal point to come after the first nonzero digit.
+\item For the power of 10, use the number of places the decimal point moves.
+\begin{enumerate}
+	\item The power is positive if the decimal point moves to the left.
+	\item The power is negative if the decimal point moves to the right.
+\end{enumerate}
+\end{enumerate}
+\vspace{0.25in}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\leftline{\bf \large Practice }
+Write each number in scientific notation:
+\begin{enumerate}
+\item $5769$
+\item $8,094,125$
+\item $0.0124$
+\item $0.00005732$
+\end{enumerate}
+\vspace{0.25in}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+To convert a number \textit{from} scientific notation \textit{to} ordinary notation:
+\begin{enumerate}
+\item The power of 10 indicates how many places to move the decimal point.
+\begin{enumerate}
+\item Move it to the right if the power of 10 is positive.
+\item Move it to the left if the power of 10 is negative.
+\end{enumerate}
+\item If moving the decimal place creates any open places, fill them with zeros.
+\end{enumerate}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\leftline{\bf \large Practice }
+Convert each of the following numbers from scientific to ordinary notation: 
+\begin{enumerate}
+\item $4 \times 10^3$
+\item $7.2 \times 10^8$
+\item $9 \times 10^{-4}$
+\item $4.378 \times 10^7$
+\end{enumerate}
+\vspace{0.25in}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\leftline{\bf \large Multiplying with Scientific Notation}
+\begin{equation}
+\begin{split}
+(5 \times 10^3)\times (4\times 10^5) &= (5\times 4) \times (10^3 \times 10^5) \\
+&= (20) \times (10^{(3+5)}) \\
+&= 2 \times 10 \times (10^8) = 2 \times 10^9
+\end{split}
+\end{equation}
+\vspace{0.5in}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\leftline{\bf \large Practice }
+Multiply (without a calculator) and express your answer in scientific notation.
+\begin{enumerate}
+\item $(7 \times 10^8)\times (2\times 10^{-2})$
+\vspace{0.5in}
+\item $(5 \times 10^{-3})\times (9\times 10^{-9})$ 
+\end{enumerate}
+\vspace{0.5in}
+
+\pagebreak
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\leftline{\bf \large Multiplying with Scientific Notation}
+Division works the same way.
+We divide the powers of ten and the other parts of the number separately.  Here is an example:
+\begin{equation}
+\begin{split}
+\frac{(2.1 \times 10^{-3})}{(8.4 \times 10^{-7})} &= \frac{2.1}{8.4} \times \frac{10^{-3}}{10^{7}} \\
+\frac{1}{4} \times 10^{-3-7} &= 0.25 \times 10^{-10} \\
+&= 2.5 \times 10^{-1} \times 10^{-10} = 2.5 \times 10^{-11}
+\end{split}
+\end{equation}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\leftline{\bf \large Practice }
+Divide (without a calculator) and express your answer in scientific notation.
+\begin{enumerate}
+\item \Large $\frac{(9 \times 10^{12})}{(3 \times 10^{4})} $
+\vspace{0.5in}
+\item $\frac{(3.2 \times 10^{5})}{(2\times 10^{-4})}$ 	
+\end{enumerate}
+\vspace{0.5in}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\leftline{\bf \large Giving Meaning to Numbers}
+There is no single recipe for giving meaning to numbers by putting them in perspective, but a few simple techniques can be helpful.  We will look at three techniques: estimation, comparisons, and scaling.\\
+
+
+\leftline{\bf \large Perspective through Estimation}
+An \textbf{order of magnitude} estimate specifies a broad range of values, usually within one or two powers of ten, such as “in the ten thousands” or “in the millions.”  Examples:\\
+
+``The US population is about 313.9 million people.'' = ``The population of the United States is on the order of 300 million people.''
+\vspace{0.5in}
+\textbf{``The world population is estimated to be about 7,258,000,000 people. ''} = 
+\vspace{0.5in}
+
+\textbf{``The number of times you blink your eyelids in a day. \footnote{note: you blink about fifteen times per minute}'' }= 
+\vspace{0.5in}
+
+\pagebreak
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\leftline{\bf \large Perspective through Comparison}
+Making comparisons can give meaning to numbers.
+Example: Compare the U.S. population to the world population.
+World population is approximately seven billion ($7\times 10^9$). US population is approximately three hundred million ($300\time 10^6$). 
+\begin{equation}
+\frac{(3 \times 10^{8})}{(7\times 10^{9})} = \frac{3}{7} \times 10^{-1} \approx 0.043
+\end{equation} 	
+The US population is about 4.3\% of the world's population.
+
+\vspace{0.5in}
+\emph{Case Study: What is a Billion Dollars?}
+How many people can you employ with \$1 billion per year? The median household income in 2015 was about \$56,000 per year.
+
+\vspace{2in}
+
+A dollar bill is 15.6cm long, 6.6cm wide, and 0.11mm thick (1000 millimeters = 1 meter = 100 centimeters). 
+\emph{How tall would a stack of a billion dollars be?}
+\end{document}

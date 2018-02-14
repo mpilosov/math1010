@@ -1,0 +1,246 @@
+\documentclass[12pt]{article}
+\usepackage{epsfig}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{epstopdf}
+
+\setlength{\textwidth}{6.2in}
+\setlength{\oddsidemargin}{0.3in}
+\setlength{\evensidemargin}{0in}
+\setlength{\textheight}{8.7in}
+\setlength{\voffset}{-.7in}
+\setlength{\headsep}{26pt}
+\setlength{\parindent}{10pt}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\title{\bf Math 1010 \\ Chapter 2A,C}
+\date{Jan 22, 2018}
+\maketitle
+
+%\vskip .3in
+
+\input{../macros}
+%\input{./latex/macros.tex}  % input some useful macros
+%\input{exermacros.tex}       % more macros for exercise formatting
+
+
+% For exercises,
+% set enumerate to give parts a, b, c, ...  rather than numbers 1, 2, 3...
+%\renewcommand{\theenumi}{\alph{enumi}}
+%\renewcommand{\labelenumi}{(\theenumi)}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\leftline{\bf \large Review}
+For reference, 
+\begin{equation*}
+\begin{split}
+\text{Recall } \frac{a}{c} \pm \frac{b}{c} &= \frac{a\pm b}{c} \text{ (we need a common denominator for addition/subtraction)}.\\
+\text{Also, } \frac{a}{c} \times \frac{b}{d} &= \frac{ab}{cd} \quad \text{ Multiplication is THE core of working with fractions}, \\
+&\text{we utilize its flexibility. For example, } a \times \frac{b}{c} = \frac{ab}{c} = b \times \frac{a}{c} .\\
+&\text{\emph{Division} is ``multiplication by a reciprocal.'' \emph{Reciprocal = opposite }} \left ( a \text{ and } \frac{1}{a} \right )\\
+\text{We have } \frac{a}{b} \div c &= \frac{a}{b} \times \frac{1}{c} \text{ (and, equivalently) } a \div \frac{b}{c} = a \times \frac{c}{b}, \\
+& \text{and MOST IMPORTANTLY}, 1 = \frac{a}{a} = \frac{b}{b} = \frac{c}{c} = \dots \text{ etc., (yes, it really is.) }
+\end{split}
+\end{equation*}
+\vspace{.5in}
+
+\leftline{\bf \large Practice}
+Simplify / re-write the following fraction using the above information: \\
+
+\begin{equation*}
+\frac{\; \frac{a}{b} \;}{\frac{c}{d}}
+\end{equation*}
+\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\leftline{\bf \large Notes on Units (2A)}
+
+\begin{itemize}
+\item The {\bf units} of a quantity describe what that quantity \emph{measures} or \emph{counts}
+\item {\bf Unit Analysis} is the process of working with units to help solve problems
+\end{itemize}
+
+Frequently we encounter scenarios where math problems have no units at all.
+However, in our case, we are engaged in \emph{unit analysis}, so units are always going to show up in your final answers and work. 
+
+
+Referring to the letters above, treat units the same way you would numbers.
+There are two key words we need in order to convert ``words into math'' in this section:
+\begin{itemize}
+\item {\bf per} refers to \emph{division} 
+\item {\bf of} refers to \emph{multiplication}. Sometimes instead of ``of'', you will see a hyphen, e.g., watt-hours = watts $\times$ hours.
+\item Furthermore, \emph{square} and \emph{cubic} refer to powers, which are \emph{repeated multiplication.}
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\vspace{0.5in}
+\leftline{\bf \large Example 1}
+For example, we would use the multiplication rules to commute (move) things around: 
+$$
+{\bf 1 \text{ ft} \times 2 \text{ ft} }= 1 \times \text{ft} \times 2 \times \text{ft} = 1 \times 2 \times \text{ft} \times \text{ft} = {\bf 2 \text{ ft}^2 }
+$$
+
+We just calculated \emph{area}, and \emph{volume} is nothing more than one extra multiplication. 
+
+\emph{Area} and \emph{volume}, along with \emph{length} and \emph{number} constitute our natural notion of size.
+\begin{itemize}
+\item number = dimensionless.  \emph{(think counting discrete objects)}. ``Zero(th) degree.''
+\item length = one dimensional. ``First degree.'' (e.g. $\text{ft}$)
+\item area = two dimensional ``Second degree.'' (e.g. $\text{ft}^2$)
+\item volume = three dimensional ``Third degree.'' (e.g. $\text{ft}^3$)
+\item \emph{also, just be aware that ``degree'' and ``order'' are interchangeable vocabulary}
+\end{itemize}
+
+\vspace{1in}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\pagebreak
+
+\leftline{\bf \large Practice (in groups)}
+\begin{enumerate}
+\item How many minutes are in an hour? How many hours in a day? Use this to compute how many minutes are in a day.
+\vspace{1in}
+
+\item How many days are there in a year? Use this and your previous work to compute the number of minutes in a year. 
+
+\vspace{1in}
+\item Finally, use these two problems to compute the number of seconds in a year.
+\vspace{1in}
+\end{enumerate}
+
+\leftline{\bf \large More practice (time permitting)}
+How many minutes are in 345 seconds?
+\vspace{1in}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pagebreak
+\leftline{\bf \large Example 2}
+Similarly, if we have 12 fluid ounces (``fl oz'', or ounce/``oz'' for short when the context is clear) per can of soda, and there are 12 cans per carton, we can compute \emph{how much fluid is in a carton. }
+
+First, let us practice translating these into fractions:
+$$
+12 \text{ oz per can} = 12 \frac{\text{oz}}{\text{can}} = \frac{12\text{ oz}}{1\text{ can}}
+$$
+$$
+12 \text{ cans per carton} = 12 \frac{\text{can(s)}}{\text{carton}} = \frac{12 \text{ can(s)}}{1 \text{ carton}}
+$$
+\emph{Notice how we rewrote $12 = \frac{12}{1}$. This comes in handy.} What did we just accomplish? \\
+
+We are establishing the \emph{equivalence} of ``12 ounces'' to ``1 can.''
+We are \emph{reformulating} the question into the common structure of fractions (as shown in the Review section of these notes), in order \emph{to make it look like something we know} how to work with mathematically.
+
+You can now essentially treat both these fractions as being the number ``1''. 
+
+This number is special because it is equal to its own reciprocal. 
+
+Which means we can flip the role of numerator and denominator in these quantities however you want. It depends on the question you are trying to ask... ``twelve cans per carton'' is the same as saying ``a can is a twelfth of a carton.''\\
+In math terms, I am saying that: 
+$$
+\frac{12 \text{ can(s)}}{1 \text{ carton}} = \frac{1 \text{ carton}}{12 \text{ can(s)}} = \frac{1}{12} \text{ carton per can, } \text{ AND } 
+\frac{12\text{ oz}}{1\text{ can}} = \frac{1\text{ can}}{12\text{ oz}} = \frac{1}{12} \text{ can per oz}
+$$
+\vspace{0.25in}
+
+Weird? Sure! \\
+Useful? Super. Let's see why.
+\vspace{0.25in}
+
+\leftline{\bf \large Example 3}
+Working off Example 2, we leverage the fact that multiplying one by itself does nothing (maintaining the equivalences, we aren't \emph{changing}, just \emph{converting}), and multiply the two quantities we just worked on expressing together:
+
+$$
+{\bf 12 \frac{\text{oz}}{\text{can}} \times 12 \frac{\text{can(s)}}{\text{carton}} } = (12 \times 12) \frac{oz}{carton} \frac{can}{can} = {\bf \frac{144 \text{ oz}}{1 \text{ carton}} }
+$$
+\vspace{0.25in}
+
+Again, we have established the equivalence of a \emph{carton} to 144 \emph{fluid ounces}.
+\textbf{This is something new! }
+We did not know this before we did the math. \\
+Why might it be useful?
+\emph{Why might we care?}\\
+
+Well, we can then divide the price of the carton (let's say it costs \$5.00) by the total amount of fluid inside to get a quantity that we are interested in \emph{price per (fluid) ounce}!\\
+First, we establish our common structure:
+$$
+\text{\$5 per carton} = \frac{\$5}{1\text{ carton}} = \frac{5 \text{ USD}}{1\text{ carton}} = \frac{1\text{ carton}}{5\text{ USD}}
+$$
+\footnote{Note: \emph{The symbol that denotes the unit for things like the dollar are strange since their units appear \textbf{before} the quantity instead of after.}
+Do not let this confuse you, there is nothing different here (multiplication ``commutes,'' remember?) So as strange as it is, $ {\bf \$5 } = \$\times 5 = 5\times \$ = {\bf 5\$} $ is technically completely correct from our perspective.
+If you prefer, use the \emph{USD} as a symbol for your unit. }
+$$
+{\bf \frac{144 \text{ oz}}{1 \text{ carton}} \times \frac{1\text{ carton}}{5\text{ USD}}} = \frac{144}{5} \times \frac{1\times\text{oz}\times \text{ carton}}{1\times\text{carton}\times \text{USD}} 
+$$
+$$
+= \frac{144}{5} \times \frac{\text{oz}}{\text{USD}} \frac{\text{carton}}{\text{carton}} = \frac{144\text{ oz}}{5\text{ USD}} ={\bf \frac{5\text{ USD}}{144\text{ oz}} =   \frac{5}{144} \frac{\text{USD}}{\text{oz}} }
+$$
+\vspace{0.25in}
+
+We compute that $\frac{5}{144} = 0.0347222.. \approx 0.0347$ and that $\frac{\text{USD}}{\text{oz}}$ means ``dollar per fluid ounce'', so we can conclude that:
+\begin{center}
+\emph{It costs \$0.0347 per fluid ounce of soda. }
+\end{center}
+(since there are ``100 pennies per dollar'', we can multiply this by 100 and express our answer in a more useful context:
+\begin{center}
+\emph{It costs 3.47 cents per fluid ounce of soda. }
+\end{center}
+
+And this... is what a lot of math (especially what we will be doing here is all about). 
+Utilizing the flexibility of a structure to answer questions we are interested in. 
+You might perform that same calculation twice to compare two soda brands in different packages to find out which is cheaper. 
+
+You would do something similar to find ``calories per serving'' or any such familiar quantity.
+Now it is time for some practice.
+
+Refer back to these examples to inform your process. 
+Ask ``what am I doing'' with each step, and be aware of what quantities you can conclude are equivalent.
+\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\leftline{\bf \large Practice Problems (Groupwork)}
+
+\begin{enumerate}
+\item There are five pieces of gum in a pack. What proportion (\emph{ratio}, \emph{fraction}) of the pack is one piece of gum?
+\vspace{0.5in}
+
+\item There are three feet in one yard. 
+How many feet are in one square yard?
+($1 \text{ yd}^2$). Recall that we have $3\text{ ft} = 1\text{ yd}$. Draw a picture if it helps.
+\vspace{1in}
+
+\item What is the total distance traveled when one runs 7 laps around a 400-meter track?
+\vspace{0.5in}
+
+\end{enumerate}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\leftline{\bf \large Notes on Problem Solving Guidelines (general) (2C)}
+Our textbook breaks these down into four steps:
+\begin{enumerate}
+\item[\bf Step 1.] Understand the problem.
+\item[\bf Step 2.] Devise a strategy.
+\item[\bf Step 3.] Carry out your strategy, \emph{revise if necessary.}
+\item[\bf Step 4.] Check, interpret and explain your result.
+\end{enumerate}
+
+\vspace{0.5in}
+\leftline{\bf \large Practice}
+
+Jill and Jack run a 100-meter race. Jill wins by 5 meters \emph{(that is, Jack ran 95 meters by the time Jill crossed the finish line)}. They decide to race again, but this time Jill starts 5 meters behind Jack. Assuming both racers run at the same pace, who will win the second race?
+
+\vspace{2in}
+
+
+\end{document}

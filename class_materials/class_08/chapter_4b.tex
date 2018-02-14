@@ -1,0 +1,211 @@
+\documentclass[12pt]{article}
+\usepackage{epsfig}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{epstopdf}
+
+\setlength{\textwidth}{6.5in}
+\setlength{\oddsidemargin}{0in}
+\setlength{\evensidemargin}{0in}
+\setlength{\textheight}{9.5in}
+\setlength{\voffset}{-1in}
+\setlength{\headsep}{0.25in}
+\setlength{\parindent}{0in}
+
+\input{../macros}
+\usepackage{etoolbox}
+\newtoggle{sol}
+%\toggletrue{sol}
+\togglefalse{sol}
+\newtheorem{theorem}{Theorem}
+\newtheorem{formula}[theorem]{Formula}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\title{\bf Math 1010 \\ Chapter 4B\iftoggle{sol}{ Key}{} }
+\date{\today}
+\maketitle
+
+
+%\input{./latex/macros.tex}  % input some useful macros
+%\input{exermacros.tex}       % more macros for exercise formatting
+
+
+% For exercises,
+% set enumerate to give parts a, b, c, ...  rather than numbers 1, 2, 3...
+\renewcommand{\theenumi}{\alph{enumi}}
+\renewcommand{\labelenumi}{(\theenumi)}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{itemize}
+	\item The {\bf principal} in financial formulas is the \emph{balance} on which interest is paid.
+	\item {\bf Simple interest} is interest paid \emph{only} on the original principal, and not on top of any interest added at later dates.
+	\item {\bf Compounded interest} is interest paid \emph{both} on the original principal \emph{and} on all interest that has been added to the original investment.\item The {\bf Annual Percentage Yield (APY)}\---also called the \emph{effective yield} or simply the \emph{yield}\---is the actual percentage by which a balance increases in one year.  It is equal to the APR if the interest is compounded yearly.  It is {\it greater than} the APR if interest is compounded more than once a year.
+\end{itemize}
+
+\begin{formula}[Simple Interest]
+	Every time period you receive the same interest payment.
+	\begin{equation}\label{eq:simple}
+		\text{Interest Payment per Time Period} = P\times(APR),
+	\end{equation}
+	where
+	\begin{itemize}
+		\item $P$ is the starting principal
+		\item APR is the Annual Percentage Rate  (as a decimal)
+	\end{itemize}
+\end{formula}
+
+\begin{formula}[Compound Interest]
+	\begin{equation}\label{eq:compound}
+		A = P\Big(1 + \frac{APR}{n} \Big)^{nY},
+	\end{equation}
+	where
+	\begin{itemize}
+		\item $A$ is the accumulated balance after $Y$ years
+		\item $P$ is the starting principal
+		\item APR is the Annual Percentage Rate (as a decimal)
+		\item $n$ is the number of compounding periods per year
+		\item and $Y$ is the number of years
+	\end{itemize}
+\end{formula}
+
+\pagebreak
+
+\begin{formula}[Continuous Compound Interest]
+	\begin{equation}\label{eq:continuous}
+		A = Pe^{(APR\times Y)}
+	\end{equation}
+	where
+	\begin{itemize}
+		\item $A$ is the accumulated balance after $Y$ years
+		\item $P$ is the starting principal
+		\item APR is the Annual Percentage Rate (as a decimal)
+		\item $e$ is a special irrational number with a value of $e\approx 2.71828$
+		\item and $Y$ is the number of years
+	\end{itemize}
+\end{formula}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\leftline{\bf \large Exercise 1 : Simple Interest}
+Bonds typically pay simple interest.  Suppose you invest $\$1000$ in a bond that pays simple interest of $5\%$ per year.
+
+\begin{enumerate}
+\item How much interest will you receive each year?
+
+\iftoggle{sol}{
+{\it Solution:
+
+We use Eq.~\eqref{eq:simple} to find the interest payment per year:
+\begin{eqnarray*}
+	\text{Interest Payment per Year} &=& P(APR) \\
+	&=& \$1000(0.05) \\
+	&=& \$50
+\end{eqnarray*}
+}
+}{\vspace{1in}}
+%%%%%%%%%%%%%%%%%%%%
+\item How much total interest will you receive in 5 years?
+
+\iftoggle{sol}{
+{\it Solution:
+
+From part (a), each year we receive a payment of $\$50$ from the interest earned on the bond.  So the total interest earned in five years is
+\begin{eqnarray*}
+	5 \times \$50 = \$250
+\end{eqnarray*}
+}
+}{\vspace{1in}}
+%%%%%%%%%%%%%%%%%%%%
+\item If the bond paid compound interest, would you receive more or less total interest? Explain.
+
+\iftoggle{sol}{
+{\it Solution:
+We would receive more interest because compound interest ALWAYS yields more than simple interest.  However, without knowing the time period of the compound interest, we cannot say exactly how much more.
+}
+}{\vspace{1in}}
+
+\end{enumerate}
+
+
+\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\leftline{\bf \large Exercise 2 : Compound Interest}
+Suppose you deposit $\$1000$ into an account with an APR of $5\%$
+\begin{enumerate}
+\item Suppose it compounds interest monthly. How much money will you have after 5 years?
+
+\iftoggle{sol}{
+{\it Solution:
+We use Eq.~\eqref{eq:compound} to find the accumulated balance after 5 years:
+\begin{eqnarray*}
+	A &=& P\Big(1 + \frac{APR}{n} \Big)^{nY} \\
+	&=& 1000\Big(1 + \frac{0.05}{12}\Big)^{(12\times 5)} \\
+	&=& \$1283.36
+\end{eqnarray*}
+}
+}{\vspace{1in}}
+%%%%%%%%%%%%%%%%%%%%
+\item What if the account compounded interest daily?  Now how much money will you have after 5 years?  Will it be more or less than compounded monthly?
+
+\iftoggle{sol}{
+{\it Solution:
+
+We use Eq.~\ref{eq:compound} to find the accumulated balance after 5 years:
+\begin{eqnarray*}
+	A &=& P\Big(1 + \frac{APR}{n} \Big)^{nY} \\
+	&=& 1000\Big(1 + \frac{0.05}{365}\Big)^{(365\times 5)} \\
+	&=& \$1284.00
+\end{eqnarray*}
+}
+}{\vspace{1in}}
+%%%%%%%%%%%%%%%%%%%%
+\item What if the account compounded interest hourly?  Now how much money will you have after 5 years?  Will it be more or less than if it compounded daily?
+
+\iftoggle{sol}{
+{\it Solution:}
+\textbf{More frequent compounding means more money.}
+If we compounded hourly, then we have:
+$$
+1 \text{ year} \times \frac{365\text{ days}}{1\text{ year}} \times \frac{24 \text{ hours}}{1\text{ day}} = 8,760 \text{ hours}
+$$
+\begin{eqnarray*}
+	A &=& P\Big(1 + \frac{APR}{n} \Big)^{nY} \\
+	&=& 1000\Big(1 + \frac{0.05}{8760}\Big)^{(8760\times  5)} \\
+	&=& \$1284.02
+\end{eqnarray*}
+}{\vspace{1in}}
+
+
+\end{enumerate} 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\leftline{\bf \large Exercise 3 : Continuous Compound Interest}
+Suppose you deposit $\$1000$ into an account with an APR of $5\%$ and \emph{continuous} compounding interest.
+How much money will you have after 5 years?
+
+\iftoggle{sol}{
+{\it Solution:
+
+We use Eq.~\eqref{eq:continuous} to find the accumulated balance after 5 years:
+\begin{eqnarray*}
+	A &=& Pe^{(APR\times Y)} \\
+	&=& 1000e^{(0.05\times 5)} \\
+	&=& \$1284.03
+\end{eqnarray*}
+}
+}{\vspace{1in}}
+
+This represents the upper limit on how much your money could grow at this interest rate over this time period. 
+
+
+
+\end{document}

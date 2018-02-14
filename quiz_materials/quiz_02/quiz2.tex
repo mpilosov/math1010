@@ -1,0 +1,114 @@
+% TEMPLATE FOR STANDARD QUIZ
+
+\documentclass[10.5pt]{article}
+\usepackage{amssymb,amsmath,amsthm,mathrsfs}
+\usepackage{graphicx}
+\oddsidemargin=0in
+\evensidemargin=0in
+\textwidth=6.3in
+\topmargin=-0.5in
+\textheight=9in
+
+% packages for fancy fonts, symbols, thm/proof environments, etc
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{setspace}
+\usepackage{nicefrac}
+\usepackage{enumitem}
+\usepackage{calc}
+\usepackage{soul}
+
+
+
+%\usepackage[sc]{mathpazo}
+%\linespread{1.05}         % Palatino needs more leading (space between lines)
+%\usepackage[T1]{fontenc}
+\usepackage{tgpagella}
+\usepackage[T1]{fontenc}
+\usepackage[multiple]{footmisc}
+
+\parindent=0in
+\pagestyle{empty}
+\newcommand{\Fbox}[1]{\fbox{\strut#1}}
+\setlength{\fboxsep}{1pt}% Just for this example
+\setlength{\parindent}{0pt}% Just for this example
+
+\input{../testpoints}
+
+\newcounter{choice}
+\renewcommand\thechoice{\Alph{choice}}
+\newcommand\choicelabel{\thechoice.}
+
+\newenvironment{choices}%
+  {\list{\choicelabel}%
+     {\usecounter{choice}\def\makelabel##1{\hss\llap{##1}}%
+       \settowidth{\leftmargin}{W.\hskip\labelsep\hskip 2.5em}%
+       \def\choice{%
+         \item
+       } % choice
+       \labelwidth\leftmargin\advance\labelwidth-\labelsep
+       \topsep=0pt
+       \partopsep=0pt
+     }%
+  }%
+  {\endlist}
+
+\newenvironment{oneparchoices}%
+  {%
+    \setcounter{choice}{0}%
+    \def\choice{%
+      \refstepcounter{choice}%
+      \ifnum\value{choice}>1\relax
+        \penalty -50\hskip 1em plus 1em\relax
+      \fi
+      \choicelabel
+      \nobreak\enskip
+    }% choice
+    % If we're continuing the paragraph containing the question,
+    % then leave a bit of space before the first choice:
+    \ifvmode\else\enskip\fi
+    \ignorespaces
+  }%
+  {}
+
+\begin{document}
+
+
+%%%(change to appropriate class and semester)
+MATH 1010-004 Spring 2018
+
+%%%(change to appropriate quiz type and date)
+Quiz 2 (Jan 31, 2018) \hspace{1.9in} \qquad {Name:} {\underline {\hspace{2.5in}}}
+\vspace{2pc}
+
+%%%(modify rules, time, points as appropriate)
+You will have 20 minutes to complete the following quiz.  No books or notes allowed.  You are allowed to use calculators.  Be sure to show all your work and use a chain of conversions where applicable.
+\vspace{1pc}
+
+\begin{problem}{4} Given that 1 yard is equal to 3 feet, convert 24 feet to yards. 
+\vspace{2.0in}
+\end{problem}
+
+\begin{problem}{6} Given that 1 yard is equal to 3 feet. Find the area in square feet ($ft^2$) of a rectangular patio that measures 20 yards by 12 yards. ({\it Hint : Draw a picture!})
+\vspace{2.5in}
+\end{problem}
+ 
+
+\newpage
+
+\begin{problem}{5} If your car gets 28 miles per gallon, how much does it cost to drive 250 miles when gasoline costs \$2.90 per gallon?
+\vspace{3in}
+\end{problem}
+
+\begin{problem}{5} You can buy shampoo in 8-ounce bottle for \$4.99 or in a 16-ounce bottle for \$10.49. Which is the better deal? Justify your answer and show your work.
+\vspace{3in}
+\end{problem}
+
+
+\showpoints
+\end{document}
+
+
+
+
+
+

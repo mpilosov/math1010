@@ -1,0 +1,170 @@
+\documentclass[12pt]{article}
+\usepackage{epsfig}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{epstopdf}
+
+\setlength{\textwidth}{6.5in}
+\setlength{\oddsidemargin}{0in}
+\setlength{\evensidemargin}{0in}
+\setlength{\textheight}{9.5in}
+\setlength{\voffset}{-1in}
+\setlength{\headsep}{0.25in}
+\setlength{\parindent}{0in}
+
+\input{../macros}
+\usepackage{etoolbox}
+
+\newtoggle{sol}
+%\toggletrue{sol}
+
+\togglefalse{sol}
+\newtheorem{theorem}{Theorem}
+\newtheorem{formula}[theorem]{Formula}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\title{\bf Math 1010 \\ Chapter 4C\iftoggle{sol}{ Key}{} }
+\date{\today}
+\maketitle
+
+
+% For exercises,
+% set enumerate to give parts a, b, c, ...  rather than numbers 1, 2, 3...
+\renewcommand{\theenumi}{\alph{enumi}}
+\renewcommand{\labelenumi}{(\theenumi)}
+
+\begin{formula}[Saving Plan Formula (Regular Payments)]
+If you are asked to find the accumulated savings plan balance use:
+	\begin{equation}\label{eq:savings_plan_regular}
+		A = PMT \times \frac{\Big[\Big(1 + \frac{APR}{n}\Big)^{(n\times Y)} - 1\Big]}{\Big(\frac{APR}{n}\Big)}
+	\end{equation}
+	OR if you are given a goal of an accumulated balance and asked to find the necessary payment to acheive this goal use:
+	\begin{equation}\label{eq:savings_plan_regular_pmt}
+		PMT = A \times \frac{\Big(\frac{APR}{n}\Big)}{\Big[\Big(1 + \frac{APR}{n}\Big)^{(n\times Y)} - 1\Big]}
+	\end{equation}
+	where
+	\begin{itemize}
+		\item $A$ is the accumulated savings plan balance
+		\item $PMT$ is the regular payment (deposit) amount
+		\item $APR$ is the Annual Percentage Rate  (as a decimal)
+		\item $n$ is the number of payment periods per year
+		\item $Y$ is the number of years
+	\end{itemize}
+\end{formula}
+
+\begin{formula}[Total Return]
+	The {\bf total return} is the percentage change in the investment value:
+	\begin{equation}\label{eq:total}
+		\text{total return} = \frac{\Big(A-P\Big)}{P}\times 100\%
+	\end{equation}
+	where $A$ is the new value and $P$ is the starting principal.
+\end{formula}
+
+\begin{formula}[Annual Return]
+	The {\bf annual return} is the annual percentage yield (APY) that would give the same overall growth.
+	\begin{equation}\label{eq:annual}
+		\text{annual return} = \Big[\Big(\frac{A}{P}\Big)^{(1 / Y)} - 1\Big] \times 100\%
+	\end{equation}
+	where $A$ is the new value and $P$ is the starting principal.
+\end{formula}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\leftline{\bf \large Exercise 1 : Determine Savings Plan Balance}
+Suppose you put $\$200$ in a bank account every month that has an APR of $6\%$.
+
+\begin{enumerate}
+\item How much money will you have in the account after 6 months?
+
+{\it Solution:
+
+We use Eq.~\eqref{eq:savings_plan_regular} to find the accumulated saving plan balance after 6 months:
+\begin{eqnarray*}
+	A &=& PMT \times \frac{\Big[\Big(1 + \frac{APR}{n}\Big)^{(n\times Y)} - 1\Big]}{\Big(\frac{APR}{n}\Big)} \\
+	&=& 200 \times \frac{\Big[\Big(1 + \frac{0.06}{12}\Big)^{(12\times 0.5)} - 1\Big]}{\Big(\frac{0.06}{12}\Big)} \\
+	&=& \$1215.10
+\end{eqnarray*}
+}
+\item How much money will you have in the account after 10 years?
+
+{\it Solution:
+
+We use Eq.~\eqref{eq:savings_plan_regular} to find the accumulated saving plan balance after 6 months:
+\begin{eqnarray*}
+	A &=& PMT \times \frac{\Big[\Big(1 + \frac{APR}{n}\Big)^{(n\times Y)} - 1\Big]}{\Big(\frac{APR}{n}\Big)} \\
+	&=& 200 \times \frac{\Big[\Big(1 + \frac{0.06}{12}\Big)^{(12\times 10)} - 1\Big]}{\Big(\frac{0.06}{12}\Big)} \\
+	&=& \$32,775.87
+\end{eqnarray*}
+}
+
+\end{enumerate}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\leftline{\bf \large Exercise 2 : Determine Savings Plan Payments}
+Suppose you want to put a downpayment on a house in 6 years and expect the downpayment to cost $\$35,000$.  Your bank offers a plan with a guaranteed APR of $4.5\%$ if you make regular monthly deposits.
+
+\begin{enumerate}
+\item How much should you deposit each month to end up with $\$35,000$ in 6 years?
+
+{\it Solution:
+
+We use Eq.~\eqref{eq:savings_plan_regular_pmt} to find the necessary payment to acheive the investment goal of $\$35,000$:
+\begin{eqnarray*}
+	PMT &=& A \times \frac{\Big(\frac{APR}{n}\Big)}{\Big[\Big(1 + \frac{APR}{n}\Big)^{(n\times Y)} - 1\Big]} \\
+	&=& 35000 \times \frac{\Big(\frac{0.045}{12}\Big)}{\Big[\Big(1 + \frac{0.045}{12}\Big)^{(12\times 6)} - 1\Big]} \\
+	&=& \$424.34
+\end{eqnarray*}
+}
+\item Suppose you are saving for a 1 million dollar home and you need to put down a $10\%$ deposit in 6 years with the same banking plan as above.  How much should you deposit each month to end up with $\$100,000$ ($10\%$ of 1 million) in 6 years?
+
+{\it Solution:
+
+We use Eq.~\eqref{eq:savings_plan_regular_pmt} to find the necessary payment to acheive the investment goal of $\$100,000$:
+\begin{eqnarray*}
+	PMT &=& A \times \frac{\Big(\frac{APR}{n}\Big)}{\Big[\Big(1 + \frac{APR}{n}\Big)^{(n\times Y)} - 1\Big]} \\
+	&=& 100000 \times \frac{\Big(\frac{0.045}{12}\Big)}{\Big[\Big(1 + \frac{0.045}{12}\Big)^{(12\times 6)} - 1\Big]} \\
+	&=& \$1212.40
+\end{eqnarray*}
+}
+\end{enumerate}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\leftline{\bf \large Exercise 3 : Determine Total and Annual Return}
+You invest $\$3000$ is a mutual fund.  Over 4 years, you investment grows in value to $\$8400$.
+
+\begin{enumerate}
+\item What is the total return on this investment?
+
+{\it Solution:
+
+We use Eq.~\eqref{eq:total} with $P=3000$ and $A=8400$ to find the total return:
+\begin{eqnarray*}
+	\text{total return} &=& \frac{\Big(A-P\Big)}{P}\times 100\% \\
+	&=& \frac{\Big(8400-3000\Big)}{3000}\times 100\% \\
+	&=& 1.8 \times 100\% \\
+	&=& 180 \%
+\end{eqnarray*}
+
+}
+\item What is the annual return on this investment?
+
+{\it Solution:
+
+We use Eq.~\eqref{eq:annual} with $P=3000$ and $A=8400$ to find the total return:
+\begin{eqnarray*}
+	\text{annual return} &=& \Big[\Big(\frac{A}{P}\Big)^{(1 / Y)} - 1\Big] \times 100\% \\
+	&=& \Big[\Big(\frac{8400}{3000}\Big)^{(1 / 4)} - 1\Big] \times 100\% \\
+	&=& 0.29 \times 100\% \\
+	&=& 29 \%
+\end{eqnarray*}
+
+}
+\end{enumerate}
+
+
+\end{document}
