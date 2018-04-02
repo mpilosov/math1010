@@ -19,7 +19,6 @@
 
 \newtoggle{sol}
 %\toggletrue{sol}
-
 \togglefalse{sol}
 \newtheorem{theorem}{Theorem}
 \newtheorem{formula}[theorem]{Formula}
@@ -27,7 +26,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
 \title{\bf Math 1010 \\ Chapter 4C\iftoggle{sol}{ Key}{} }
-\date{Feb 14, 2018}
+\date{\vspace{-0.5in}Feb 14, 2018}
 \maketitle
 
 
@@ -35,6 +34,9 @@
 % set enumerate to give parts a, b, c, ...  rather than numbers 1, 2, 3...
 \renewcommand{\theenumi}{\alph{enumi}}
 \renewcommand{\labelenumi}{(\theenumi)}
+Let's say you decide to save some money by putting a fixed amount away at regular intervals. 
+If you put that money into a savings account, it grows with interest. Just like figuring out equal-sized debt payments to pay off debt, there is a formula for figuring out how much you would earn in a savings account! 
+Similarly, if you have a goal in mind, you can use a rearranged version of the formula to figure out how much to put away each month.
 
 \begin{formula}[Saving Plan Formula (Regular Payments)]
 If you are asked to find the accumulated savings plan balance use:
@@ -78,81 +80,104 @@ Suppose you put $\$200$ in a bank account every month that has an APR of $6\%$.
 
 \begin{enumerate}
 \item How much money will you have in the account after 6 months?
-
+\iftoggle{sol}{
 {\it Solution:
-
 We use Eq.~\eqref{eq:savings_plan_regular} to find the accumulated saving plan balance after 6 months:
 \begin{eqnarray*}
 	A &=& PMT \times \frac{\Big[\Big(1 + \frac{APR}{n}\Big)^{(n\times Y)} - 1\Big]}{\Big(\frac{APR}{n}\Big)} \\
-	&=& 200 \times \frac{\Big[\Big(1 + \frac{0.06}{12}\Big)^{(12\times 0.5)} - 1\Big]}{\Big(\frac{0.06}{12}\Big)} \\
+	&=& \$200 \times \frac{\Big[\Big(1 + \frac{0.06}{12}\Big)^{(12\times 0.5)} - 1\Big]}{\Big(\frac{0.06}{12}\Big)} \\
 	&=& \$1215.10
 \end{eqnarray*}
 }
+}{\vspace{2in}}
 \item How much money will you have in the account after 10 years?
 
+\iftoggle{sol}{
 {\it Solution:
-
 We use Eq.~\eqref{eq:savings_plan_regular} to find the accumulated saving plan balance after 6 months:
 \begin{eqnarray*}
 	A &=& PMT \times \frac{\Big[\Big(1 + \frac{APR}{n}\Big)^{(n\times Y)} - 1\Big]}{\Big(\frac{APR}{n}\Big)} \\
-	&=& 200 \times \frac{\Big[\Big(1 + \frac{0.06}{12}\Big)^{(12\times 10)} - 1\Big]}{\Big(\frac{0.06}{12}\Big)} \\
+	&=& \$200 \times \frac{\Big[\Big(1 + \frac{0.06}{12}\Big)^{(12\times 10)} - 1\Big]}{\Big(\frac{0.06}{12}\Big)} \\
 	&=& \$32,775.87
 \end{eqnarray*}
 }
+}{\vspace{1in}}
 
 \end{enumerate}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pagebreak
 \leftline{\bf \large Exercise 2 : Determine Savings Plan Payments}
 Suppose you want to put a downpayment on a house in 6 years and expect the downpayment to cost $\$35,000$.  Your bank offers a plan with a guaranteed APR of $4.5\%$ if you make regular monthly deposits.
 
 \begin{enumerate}
 \item How much should you deposit each month to end up with $\$35,000$ in 6 years?
 
+\iftoggle{sol}{
 {\it Solution:
-
 We use Eq.~\eqref{eq:savings_plan_regular_pmt} to find the necessary payment to acheive the investment goal of $\$35,000$:
 \begin{eqnarray*}
 	PMT &=& A \times \frac{\Big(\frac{APR}{n}\Big)}{\Big[\Big(1 + \frac{APR}{n}\Big)^{(n\times Y)} - 1\Big]} \\
-	&=& 35000 \times \frac{\Big(\frac{0.045}{12}\Big)}{\Big[\Big(1 + \frac{0.045}{12}\Big)^{(12\times 6)} - 1\Big]} \\
-	&=& \$424.34
+	&=& \$35000 \times \frac{\Big(\frac{0.045}{12}\Big)}{\Big[\Big(1 + \frac{0.045}{12}\Big)^{(12\times 6)} - 1\Big]} \\
+	&=& \$424.34 \text{ per month}
 \end{eqnarray*}
 }
-\item Suppose you are saving for a 1 million dollar home and you need to put down a $10\%$ deposit in 6 years with the same banking plan as above.  How much should you deposit each month to end up with $\$100,000$ ($10\%$ of 1 million) in 6 years?
+}{\vspace{1.5in}}
 
+\item How much should you deposit each month to end up with $\$35,000$ in 6 years if the APR was instead 5.5\%?
+
+\iftoggle{sol}{
+{\it Solution:
+We use Eq.~\eqref{eq:savings_plan_regular_pmt} to find the necessary payment to acheive the investment goal of $\$35,000$:
+\begin{eqnarray*}
+	PMT &=& A \times \frac{\Big(\frac{APR}{n}\Big)}{\Big[\Big(1 + \frac{APR}{n}\Big)^{(n\times Y)} - 1\Big]} \\
+	&=& \$35000 \times \frac{\Big(\frac{0.055}{12}\Big)}{\Big[\Big(1 + \frac{0.055}{12}\Big)^{(12\times 6)} - 1\Big]} \\
+	&=& \$411.41 \text{ per month}
+\end{eqnarray*}
+}
+}{\vspace{1.5in}}
+
+\item Suppose you are saving for a 1 million dollar home and you need to put down a $10\%$ deposit in 6 years with the 4.5\% APR plan above.  How much should you deposit each month to end up with $\$100,000$ ($10\%$ of 1 million) in 6 years?
+
+\iftoggle{sol}{
 {\it Solution:
 
 We use Eq.~\eqref{eq:savings_plan_regular_pmt} to find the necessary payment to acheive the investment goal of $\$100,000$:
 \begin{eqnarray*}
 	PMT &=& A \times \frac{\Big(\frac{APR}{n}\Big)}{\Big[\Big(1 + \frac{APR}{n}\Big)^{(n\times Y)} - 1\Big]} \\
-	&=& 100000 \times \frac{\Big(\frac{0.045}{12}\Big)}{\Big[\Big(1 + \frac{0.045}{12}\Big)^{(12\times 6)} - 1\Big]} \\
+	&=& \$100000 \times \frac{\Big(\frac{0.045}{12}\Big)}{\Big[\Big(1 + \frac{0.045}{12}\Big)^{(12\times 6)} - 1\Big]} \\
 	&=& \$1212.40
 \end{eqnarray*}
 }
+}{\vspace{1.5in}}
 \end{enumerate}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pagebreak
 \leftline{\bf \large Exercise 3 : Determine Total and Annual Return}
 You invest $\$3000$ is a mutual fund.  Over 4 years, you investment grows in value to $\$8400$.
 
 \begin{enumerate}
 \item What is the total return on this investment?
-
+\iftoggle{sol}{
 {\it Solution:
 
-We use Eq.~\eqref{eq:total} with $P=3000$ and $A=8400$ to find the total return:
+We use Eq.~\eqref{eq:total} with $P=\$3000$ and $A=\$8400$ to find the total return:
 \begin{eqnarray*}
 	\text{total return} &=& \frac{\Big(A-P\Big)}{P}\times 100\% \\
-	&=& \frac{\Big(8400-3000\Big)}{3000}\times 100\% \\
+	&=& \frac{\$\Big(8400-3000\Big)}{\$3000}\times 100\% \\
 	&=& 1.8 \times 100\% \\
 	&=& 180 \%
 \end{eqnarray*}
 
 }
+
+}{\vspace{2in}}
 \item What is the annual return on this investment?
 
+\iftoggle{sol}{
 {\it Solution:
 
 We use Eq.~\eqref{eq:annual} with $P=3000$ and $A=8400$ to find the total return:
@@ -164,7 +189,9 @@ We use Eq.~\eqref{eq:annual} with $P=3000$ and $A=8400$ to find the total return
 \end{eqnarray*}
 
 }
+}{\vspace{2in}}
 \end{enumerate}
+
 
 
 \end{document}

@@ -1,0 +1,256 @@
+\documentclass[12pt]{article}
+\usepackage{epsfig}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{epstopdf}
+
+\setlength{\textwidth}{6.5in}
+\setlength{\oddsidemargin}{0in}
+\setlength{\evensidemargin}{0in}
+\setlength{\textheight}{9.5in}
+\setlength{\voffset}{-1in}
+\setlength{\headsep}{0.25in}
+\setlength{\parindent}{0in}
+
+\input{../macros}
+\usepackage{etoolbox}
+
+\newtoggle{sol}
+%\toggletrue{sol}
+
+\togglefalse{sol}
+\newtheorem{theorem}{Theorem}
+\newtheorem{formula}[theorem]{Formula}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\title{\bf Math 1010 \\ Chapter 8B\iftoggle{sol}{ Key}{} }
+\date{Feb 26 2018}
+\maketitle
+
+%\input{./latex/macros.tex}  % input some useful macros
+%\input{exermacros.tex}       % more macros for exercise formatting
+
+
+% For exercises,
+% set enumerate to give parts a, b, c, ...  rather than numbers 1, 2, 3...
+\renewcommand{\theenumi}{\alph{enumi}}
+\renewcommand{\labelenumi}{(\theenumi)}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+{\large \bf Doubling and Halving Times}
+\begin{itemize}
+	\item The time required for each doubling in exponential growth is call the {\bf doubling time}
+	\item The time required for each halving (reduction in the quantity by $50\%$) in exponential growth is called the {\bf halving time}.
+\end{itemize}
+
+\begin{formula}[Doubling Time]
+After a time $t$, an exponentially growing quantity with a doubling time of $T_{double}$ increases in size by a factor of $$2^{t / T_{double}}.$$  The new value of the quantity is then given by
+\begin{equation}\label{eq:doubling_time}
+	\text{New Value} = \text{Initial Value} \times 2^{t / T_{double}}
+\end{equation}
+
+\end{formula}
+
+\begin{formula}[APPROXIMATE Doubling Time]
+For a quantity growing exponentially at a rate of $P\%$ per time period, the doubling time is APPROXIMATELY
+\begin{equation}\label{eq:approximate_doubling}
+	T_{double} \approx \frac{70}{P}.
+\end{equation}
+
+This approximation works best for small growth rates and {\bf does not work well for growth rates over about $15\%$} (sounds like a good True/False exam question $\hdots$).
+
+\end{formula}
+
+\begin{formula}[Half-Life]
+After a time $t$, an exponentially decaying quantity with a {\bf half-life time of $T_{half}$} decreases in size by a factor of $$\Big(\frac{1}{2}\Big)^{t / T_{half}}.$$ The new value of the decaying quantity is related to its initial value (at $t=0$) by
+\begin{equation}\label{eq:half_life}
+	\text{New value} = \text{initial value} \times \Big(\frac{1}{2}\Big)^{t / T_{half}}
+\end{equation}
+
+
+\end{formula}
+
+\begin{formula}[APPROXIMATE Half-Life Formula]
+For a quantity decaying exponentially at a rate of $P\%$ per time period, the half-life is APPROXIMATELY
+\begin{equation}\label{eq:approximate_half_life}
+	T_{half} \approx \frac{70}{P}.
+\end{equation}
+
+This approximation works best for small growth rates and {\bf does not work well for decay rates over about $15\%$} (also a good True/False exam question ...).
+
+\end{formula}
+
+
+------------------------------------------------------------------------------------------------------------------
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\leftline{\bf \large Exercise 1 : Doubling Time}
+Compound interest produces exponential growth because an interest-bearing account grows by the same percentage each year \emph{(yet another good True/False exam question)}. Suppose your bank account has a doubling time of 13 years.
+
+\begin{enumerate}
+\item By what factor does your balance increase in 50 years?
+\iftoggle{sol}{
+{\it Solution:
+The doubling time is $T_{double} = 13$ years, so after $t=50$ years, we use Eq.~\eqref{eq:doubling_time} to find the factor by which your balance increases,
+\begin{eqnarray*}
+	2^{t / T_{double}} &=& 2^{50 / 13} \\
+	&=& 2^{3.8462} \\
+	&\approx & 14.382.
+\end{eqnarray*}
+}}{\vspace{1in}}
+
+
+
+\item If you started with a balance of $\$1,000$, how much will it have grown to after 50 years?
+\iftoggle{sol}{
+{\it Solution:
+Again we refer to Eq.~\eqref{eq:doubling_time}, where this time we use $\$1,000$ as the {\bf initial value} of the account,
+\begin{eqnarray*}
+	\text{New Value} &=& \text{initial value} \times 2^{t / T_{double}} \\
+	&=& (1000)\times(2^{50/13}) \\
+	&=& \$14,382
+\end{eqnarray*}
+
+}
+}{\vspace{1in}}
+
+
+\end{enumerate}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\leftline{\bf \large Exercise 2 : APPROXIMATE Doubling Time}
+The world population doubled in the 40 years from 1960 to 2000.
+
+\begin{enumerate}
+\item What was the average percentage growth rate during this time period?
+\iftoggle{sol}{
+{\it Solution:
+We use Eq.~\eqref{eq:approximate_doubling} to find $P$,
+\begin{eqnarray*}
+	T_{double} &=& \frac{70}{P} \\
+	40 &=& \frac{70}{P} \\
+	40P &=& 70 \\
+	P &=& 1.75.
+\end{eqnarray*}
+So the average population growth rate between 1960 and 2000 was about $P=1.75\%$ per year.
+
+}
+}{\vspace{1in}}
+
+\item Suppose the growth rate was $P=5\%$.  How long would it have taken for the world population to double?
+\iftoggle{sol}{
+{\it Solution:
+We use Eq.~\eqref{eq:approximate_doubling} to find $T_{double}$,
+\begin{eqnarray*}
+	T_{double} &=& \frac{70}{P} \\
+	&=& \frac{70}{5} \\
+	&=& 14
+\end{eqnarray*}
+So it would have taken just 14 years for the population to double, this would be 1974.
+
+}
+}{\vspace{1in}}
+
+\end{enumerate}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\leftline{\bf \large Exercise 3 : Half-Life}
+Radioactive cabon-14 has a half-life of about 5700 years.  It collects in organisms only while they are alive.  Once they are dead, it only decays.
+
+\begin{enumerate}
+\item What fraction of the carbon-14 is an animals bone still remains 1,000 years after the animal has died?
+\iftoggle{sol}{
+{\it Solution:
+We use Eq.~\eqref{eq:half_life} to determine this fraction,
+\begin{eqnarray*}
+	\Big(\frac{1}{2}\Big)^{t / T_{half}} &=& \Big(\frac{1}{2}\Big)^{1000 / 5700} \\
+	&=& 0.885
+\end{eqnarray*}
+So $88.5\%$ of the carbon-14 remains in the animal after 1,000 years.
+
+}
+}{\vspace{1in}}
+
+\item After 10,000 years, what fraction of the carbon-14 remains in the animal?
+\iftoggle{sol}{
+{\it Solution:
+We use Eq.~\eqref{eq:half_life} to determine this fraction,
+\begin{eqnarray*}
+	\Big(\frac{1}{2}\Big)^{t / T_{half}} &=& \Big(\frac{1}{2}\Big)^{10,000 / 5700} \\
+	&=& 0.885
+\end{eqnarray*}
+So $29.6\%$ of the carbon-14 remains in the animal after 10,000 years.
+
+}
+}{\vspace{1in}
+\item After 50,000 years, what fraction of the carbon-14 remains in the animal?
+\iftoggle{sol}{
+{\it Solution:
+We use Eq.~\eqref{eq:half_life} to determine this fraction,
+\begin{eqnarray*}
+	\Big(\frac{1}{2}\Big)^{t / T_{half}} &=& \Big(\frac{1}{2}\Big)^{50,000 / 5700} \\
+	&=& 0.002287631157229656
+\end{eqnarray*}
+So $0.229\%$ of the carbon-14 remains in the animal after 50,000 years.
+
+}
+}{\vspace{1in}}
+
+\end{enumerate}
+
+\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\leftline{\bf \large Exercise 4 : APPROXIMATE Half-Life}
+Suppose that inflation causes the value of the Russian currency (ruble) to fall at a rate of $10\%$ per year (relative to the US dollar).
+
+\begin{enumerate}
+\item At this rate, approximately how long does it take for the ruble to lose half of its value?
+
+{\it Solution:
+We use the APPROXIMATE half-life formula Eq.~\eqref{eq:approximate_half_life},
+\begin{eqnarray*}
+	T_{half} &=& \frac{70}{P} \\
+	&=& \frac{70}{10} \\
+	&=& 7
+\end{eqnarray*}
+So it will take about 7 years for the the ruble to lose half of its value.
+
+The \emph{true} answer is actually closer to 6.5 years. 
+}
+}{\vspace{1in}}
+\vspace{1.5in}
+
+\item How long will it take to lose $\frac{3}{4}$ of its value? \emph{Hint: same procedure as (a) but with a different ``starting'' value. Solve for the time it would take to halve its value again (half of half means a fourth of the original value is left, so it lost $\frac{3}{4}$ of its value), and add it to the time you found from (a). }
+\iftoggle{sol}{
+{\it Solution:
+We use the APPROXIMATE half-life formula again, but the starting amount is now  Eq.~\eqref{eq:approximate_half_life},
+\begin{eqnarray*}
+	T_{half} &=& \frac{70}{P} \\
+	&=& \frac{70}{10} \\
+	&=& 7
+\end{eqnarray*}
+So it will take about 7+7=14 years for the the ruble to lose half of its value.
+
+The \emph{true} answer is actually closer to 13 years. The approximation works best for shorter time periods.
+}
+}{\vspace{2in}}
+\end{enumerate}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document}

@@ -1,0 +1,179 @@
+\documentclass[12pt]{article}
+\usepackage{epsfig}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{epstopdf}
+
+\setlength{\textwidth}{6.5in}
+\setlength{\oddsidemargin}{0in}
+\setlength{\evensidemargin}{0in}
+\setlength{\textheight}{9.5in}
+\setlength{\voffset}{-1in}
+\setlength{\headsep}{0.25in}
+\setlength{\parindent}{0in}
+
+\input{../macros}
+\usepackage{etoolbox}
+
+\newtoggle{sol}
+%\toggletrue{sol}
+
+\togglefalse{sol}
+\newtheorem{theorem}{Theorem}
+\newtheorem{formula}[theorem]{Formula}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\title{\bf Math 1010 \\ Chapter 8A\iftoggle{sol}{ Key}{} }
+\date{Feb 21 2018}
+\maketitle
+
+% For exercises,
+% set enumerate to give parts a, b, c, ...  rather than numbers 1, 2, 3...
+\renewcommand{\theenumi}{\alph{enumi}}
+\renewcommand{\labelenumi}{(\theenumi)}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+{\large \bf Exponential and Linear Growth}
+\begin{itemize}
+	\item {\bf Linear growth} occurs when a quantity grows by the same {\it absolute} amount in each unit of time.
+	\item {\bf Exponential growth} occurs when a quantity grows by the same {\it relative} amount (by the same {\it percentage}) in each unit of time.
+	\item Exponential growth leads to repeated doublings.  With each doubling, the amount of increase is approximately equal to the {\bf sum} of all preceding doubling.
+	\item Exponential growth {\bf cannot continue for extended periods of time}.  After only a relatively small number of doublings, exponentially growing quantities reach impossible proportions.
+\end{itemize}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\leftline{\bf \large Exercise 1 : Identifying Exponential and Linear Growth}
+In each of the following situations, state whether the growth (or decay) is {\bf linear} or {\bf exponential}, and then answer the associated question.
+
+\begin{enumerate}
+\item The number of students at a high school has increased by 50 in each of the last four years.  What type of growth is this?  If the student population was 750 fours years ago, what is it today?
+
+{\it Solution:
+Because the number of students increases by the same {\bf absolute} amount each year, this is {\bf linear growth}.
+
+\vskip 5pt
+
+Four years ago the population was 750 students.  Each year the population increases by 50 students, so the current population today is given by, $$750 + 50 \times 4 = 950.$$
+
+}
+
+\item The price of milk has been rising by $3\%$ per year.  What ype of growth is this?  If the proce of a gallon of milk was $\$4$ a year ago, what is it today?
+
+{\it Solution:
+The price in increasing by a {\bf percentage}, so this is exponential growth.
+
+\vskip 5pt
+
+One year ago the price was $\$4$ per gallon, so after one year of increasing at a rate of $3\%$ per year the price is given by $$ \$4.00 \times (1.03) = \$4.12.$$
+
+}
+
+\item The memory capacity of state-of-the-art computer storage devices is doubling approximately every two years.  What type of growth is this?  If a company's top-of-the-line hard drive holds 16 terabytes today, how much will it hold in six years?
+
+{\it Solution:
+The storage capacity is {\bf doubling} after a given time (two years in this example), so this is {\bf exponential growth}.
+
+\vskip 5pt
+
+In six years the storage capacity will have doubled {\bf three times} (doubles every two years from the problem statement).  So the capacity in six years is given by, $$16 \times (2^3) = 128.$$
+
+That is, the capacity in six years will be 128 terabytes.
+
+}
+\item The price of high-definition televisions has been {\bf falling} by about $25\%$ per year.  If the price now is $\$1,000$, what can we expect the price to be in two years?
+
+{\it Solution:
+The price in decreasing by a {\bf percentage}, so this is {\bf exponential decay}.
+
+\vskip 5pt
+
+The price is falling by $25\%$ per year, so in two years the price is given by, $$\$1000 \times (0.75)^2 = \$562.50.$$
+
+}
+
+
+
+
+\end{enumerate}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\leftline{\bf \large Exercise 2 : Bacteria in a Bottle}
+Suppose you place a {\bf single bacterium} in a bottle at 11:00  It grows and at 11:01 divides into {\bf two bacteria}.  These two bacteria each grow and at 11:02 each divides into two bacteria, resulting in a total of {\bf four bacteria} in the bottle.
+
+Now, suppose the bacteria continue to double in this way {\bf every minute}, and the bottle is completely full at 12:00.
+
+\begin{enumerate}
+\item What is the total number of bacteria in the bottle at 12:00?
+
+{\it Solution:
+The total number is given by, $$2^{60} = 1.15\times 10^{18}.$$
+
+}
+
+\item At what time was the bottle {\bf half-full}?
+
+{\it Solution:
+The number of bacteria doubles {\bf every minute}.  So given that the bottle is full at 12:00, then the bottle is half-full at 11:59.
+
+}
+
+\item How many bottles would the bacteria fill at the end of the {\bf second hour}?
+
+{\it Solution:
+After one hour the bacteria have filled one bottle.  And because they double in number each {\bf minute}, by the end of the second hour they will occupy, $$2^{60} = 1.15\times 10^{18}$$
+bottles.
+
+}
+
+\end{enumerate}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\leftline{\bf \large Exercise 3 : More Bacteria in a Bottle}
+Suppose you place a {\bf single bacterium} in a bottle at 11:00  It grows and at 11:01 divides into {\bf two bacteria}.  These two bacteria each grow and at 11:02 each divides into two bacteria, resulting in a total of {\bf four bacteria} in the bottle.
+
+Now, suppose the bacteria continue to double in this way {\bf every minute}, and the bottle is completely full at 12:00.
+
+\begin{enumerate}
+\item At what time will the bacteria occupy 45 million bottles?
+
+{\it Solution:
+From the previous problem, we understand that the bacteria occupy a single bottle at 12:00 and this amount doubles every minute.  So really the question is, how long will it take (after 12:00) for the bacteria to occupy 45 million bottles?  This can be determined by solving the following equation for $n$, \begin{eqnarray*}
+	45\times 10^6 &=& 2^n \\
+	\log(45\times 10^6) &=& \log(2^n) \\
+	\log(45\times 10^6) &=& n\log(2) \\
+	\frac{\log(45\times 10^6)}{\log(2)} &=& n \\
+	n &=& 25.42
+\end{eqnarray*}
+So {\bf 26 minutes} after 12:00 the bacteria will occupy more than 45 million bottles.  So this occurs at 12:26.
+
+
+}
+
+\item What percentage of the bottle do the bateria occupy at 11:50?
+
+{\it Solution:
+At 11:59 the bacteria occupy one half or $50\%$ of the bottle.  We can think of this question as a question about exponential decay, where each minute the number of bacteria decays by a factor of two, or the number of bacteria is cut in half.  So at 11:50 (10 minutes aways from 12:00 so the bacteria decay in half 10 times) the bacteria occupy, $$(\frac{1}{2})^{10} = \frac{1}{1024} = 0.000977 = 9.77\times 10^{-4}.$$
+
+}
+
+\end{enumerate}
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document}
